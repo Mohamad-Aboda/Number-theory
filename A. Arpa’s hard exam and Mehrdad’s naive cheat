@@ -1,0 +1,25 @@
+#include <iostream>
+#include <stdio.h>
+#include <memory.h>
+#include <algorithm>
+#include <vector>
+#include <stack>
+#include <set>
+#include <math.h>
+#include <map>
+using namespace std;
+set<char>dig;
+set<char>mid;
+int main() {
+// 1378^n % 10 = 8^n % 10;
+    int n; cin >> n;
+    int sec[] = { 8, 4, 2, 6 };
+    int ans = 0;
+    if (n == 0)ans = 1;
+    else {
+        n = (n - 1) % 4;
+        ans = sec[n];
+    }
+    cout << ans << endl;
+    return 0;
+}
