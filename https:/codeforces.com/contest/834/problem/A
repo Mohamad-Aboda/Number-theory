@@ -1,0 +1,34 @@
+#include <iostream>
+#include <memory.h>
+#include <algorithm>
+#include <vector>
+#include <stack>
+#include <map>
+#include <set>
+
+using namespace std;
+int main() {
+    char start, end; cin >> start >> end;
+    string dir = "undefined";
+    string temp = "v<^>";
+    long long n; cin >> n;
+    n = n % 4;
+    if (n == 0 || n == 2)
+        dir = "undefined";
+    else {
+        for (int i = 0; i < 4; i++) {
+            if (temp[i] == start && temp[(i + n) % 4] == end) {
+                dir = "cw";
+                break;
+            }
+            else if (temp[i] == start && temp[(i - n + 4) % 4] == end) {
+                dir = "ccw";
+                break;
+            }
+
+        }
+    }
+    cout << dir << endl;
+    return 0;
+}
+
